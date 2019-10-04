@@ -3,6 +3,22 @@ variable "prefix" {
   default = "1219samplevnet"
 }
 
+variable "subscription_id" {
+  type  = string
+}
+
+variable "client_id" {
+  type = string
+}
+
+variable "client_secret" {
+  type = string
+}
+
+variable "tenant_id" {
+  type = string
+}
+
 variable "resource_group_name" {
   description = "Default resource group name that the network will be created in."
   default     = "myapp-rg"
