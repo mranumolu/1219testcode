@@ -1,6 +1,5 @@
 variable "prefix" {
-  type = string
-  default = "1219samplevnet"
+  default = "1219sample"
 }
 
 variable "subscription_id" {
@@ -56,12 +55,3 @@ variable "subnet_service_endpoints" {
   default     = []
 }
 
-variable "tags" {
-  description = "The tags to associate with your network and subnets."
-  type        = "map"
-
-  default = {
-    tag1 = ""
-    tag2 = ""
-  }
-}
