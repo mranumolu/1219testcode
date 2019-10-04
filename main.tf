@@ -15,7 +15,16 @@ provider "azurerm" {
     client_id       = var.client_id
     client_secret   = var.client_secret
     tenant_id       = var.tenant_id
-  }
+}
+
+locals {
+  name  = "${var.prefix}-rg"
+}
+
+resource "azurerm_resource_group" "resource-group" {
+  name     = local.name
+  location = var.location
+}
 
 resource "azurerm_virtual_network" "vnet" {
   name                = "${var.prefix}-vnet"
@@ -23,7 +32,6 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = var.address_space
   resource_group_name = var.resource_group_name
   dns_servers         = var.dns_servers
-  tags                = var.tags
 }
 
 resource "azurerm_subnet" "subnet" {
