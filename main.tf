@@ -5,10 +5,6 @@ terraform {
   required_version = "0.12.9"
 }
 
-provider "random" {
-  version = "2.2.0"
-}
-
 provider "azurerm" {
   version = "1.34.0"
     subscription_id = var.subscription_id
